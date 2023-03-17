@@ -852,6 +852,11 @@ small {
         text-align: center;
     }
 
+    .about__heading {
+        text-align: center;
+        margin-bottom: 3.5rem;
+    }
+
     .about__text {
         text-align: left;
     }
@@ -870,6 +875,15 @@ small {
 
     .img__swan-box {
         margin-right: 3rem;
+    }
+
+    .work__heading {
+        margin: 0 0 3.5rem;
+    }
+
+    .contact__heading {
+        text-align: center;
+        margin-bottom: 3.5rem;
     }
 
     .contact__img-box {
