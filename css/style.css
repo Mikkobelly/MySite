@@ -754,10 +754,12 @@ small {
 @keyframes fadeIn {
     0% {
         opacity: 0;
+        transform: scale(1.15);
     }
 
     100% {
         opacity: 1;
+        transform: scale(1);
     }
 }
 
@@ -833,7 +835,7 @@ small {
 }
  
 .fade-in {
-    animation: .8s ease-in fadeIn;
+    animation: 1s ease-in-out fadeIn;
 }
 
 .bottom-in {
