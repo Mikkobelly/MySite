@@ -8,6 +8,7 @@
     --color-black-light: rgba(31, 31, 31, .7);
 
     --color-red: rgb(152, 25, 25);
+    --color-red2: rgba(165, 53, 53, 0.867);
     --color-red-shadow: rgba(152, 25, 25, .3);
     --color-red-light: rgb(252, 40, 40);
     --color-red-light-2: rgb(198, 40, 40);
@@ -29,7 +30,6 @@
 
     --transition: all .2s ease-in-out;
 }
-
 
 *,
 *::before,
@@ -85,11 +85,9 @@ ul {
 #contact {
     padding: 8vw 10vw 0;
 }
-/*---------------------------*/
 
 
-
-/*------- TYPOGRAPHY --------*/
+/*------ TYPOGRAPHY ------*/
 h1,
 h2,
 h3,
@@ -121,11 +119,10 @@ h4 {
     font-size: 2rem;
     text-shadow: 2px 2px var(--color-red-shadow);
 }
-/*---------------------------*/
 
 
 
-/*-------- COMPONENTS ---------*/
+/*------- COMPONENTS -------*/
 a:link,
 a:visited {
     text-decoration: none;
@@ -173,7 +170,6 @@ a:visited {
     transform: translateY(-3px);
     box-shadow: var(--box-shadow-small);
 }
-/*---------------------------*/
 
 
 
@@ -216,9 +212,11 @@ a:visited {
 }
 
 .navigation-list__item:hover,
-.navigation-list__item:active {
+.navigation-list__item:active,
+.navigation-list__item.active-link {
     color: var(--color-red);
     filter: brightness(1.25);
+    transition: .3s ease-out;
 }
 
 .dropdown__menu-box,
@@ -245,7 +243,7 @@ a:visited {
     margin-top: 3rem;
 }
 
-/*--- NAVIGATION ANIMATION ---*/
+/* --- NAVIGATION ANIMATION --- */
 .navigation-list__item::before,
 .navigation-list__item::after {
     content: "";
@@ -275,7 +273,6 @@ a:visited {
 }
 
 
-
 /* FOOTER */
 .page-footer {
     display: flex;
@@ -288,7 +285,9 @@ a:visited {
 }
 
 .footer__text {
+    color: var(--color-grey2);
     margin-bottom: 2rem;
+    font-size: 1.4rem;
 }
 
 .footer__media-box {
@@ -325,10 +324,6 @@ a:visited {
     fill: var(--color-red);
 }
 
-.footer__text {
-    color: var(--color-grey);
-}
-
 
 /* HOME */
 .profile {
@@ -341,8 +336,6 @@ a:visited {
 
 .profile__img {
     width: 100%;
-
-    animation: .8s ease-in fadeIn;
 }
 
 .flex-box--right {
@@ -355,8 +348,6 @@ a:visited {
 
 .profile__text {
     text-align: center;
-
-    animation: .8s ease-in-out moveInUp;
 }
 
 .profile__portfolio {
@@ -382,27 +373,7 @@ a:visited {
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
-
-    animation:  .6s ease-in .2s moveInBottom;
 }
-
-
-/*--- TEXT ANIMATION ---*/
-.profile__heading,
-.profile__text,
-.profile__link,
-.about__heading,
-.work__heading,
-.contact__heading {
-    animation-fill-mode: backwards;
-}
-
-/* .about__heading,
-.work__heading,
-.contact__heading {
-    animation: .8s ease-in-out moveInLeft
-} */
-
 
 
 /* ABOUT */
@@ -436,13 +407,12 @@ a:visited {
     position: relative;
 }
 
-.about__img-box {
-    width: 23rem;
-}
-
 .img__swan-box,
 .img__studio-box {
+    width: 23rem;
     position: absolute;
+    overflow: hidden;
+    transition: var(--transition);
 }
 
 .img__swan-box {
@@ -458,16 +428,7 @@ a:visited {
 .img__swan,
 .img__studio {
     width: 100%;
-}
-
-.about__img {
-    transition: .2s ease;
-}
-
-.about__img:hover {
-    transform: scale(1.2);
-    filter: brightness(1.4);
-    box-shadow: var(--box-shadow-red);
+    transition: var(--transition);
 }
 
 .cv__btn:link,
@@ -493,6 +454,15 @@ a:visited {
 
 .skill__list li {
     margin: 1.4rem;
+    background-color: var(--color-red2);
+    color: var(--color-white);
+    padding: .8rem 1.2rem;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.skill__list li:hover {
+    cursor: default;
 }
 
 .skill__title {
@@ -501,6 +471,51 @@ a:visited {
     margin-bottom: 2rem;
 }
 
+/* ---- IMAGES ANIMATION ---- */
+.img__swan-box::before {
+    content: "Dacing Swan Lake";
+    display: block;
+    width: fit-content;
+    color: var(--color-white);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.img__studio-box::before {
+    content: "Photo taken by Riku Ito";
+    display: block;
+    width: fit-content;
+    color: var(--color-white);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.img__swan-box:hover,
+.img__studio-box:hover {
+    box-shadow: var(--box-shadow-red);
+}
+
+.img__swan-box:hover>.img__swan,
+.img__studio-box:hover>.img__studio {
+    filter: blur(4px) brightness(.6);
+    transform: scale(1.5);
+}
+
+.img__swan-box:hover::before,
+.img__studio-box:hover::before {
+    top: 50%;
+    opacity: 1;
+}
 
 
 /* WORK */
@@ -520,8 +535,6 @@ a:visited {
     padding: 1.5rem 2.5rem;
     background-size: cover;
     box-shadow: .8rem .8rem .8rem .1rem rgba(193, 179, 179, .55);
-
-    /* animation: .5s ease-in COMEIN_FROM_SIDE */
 }
 
 @supports (display: grid) {
@@ -638,7 +651,7 @@ a:visited {
 }
 
 
-/* Modal */
+/* MODAL */
 .modal-content {
     border:none;
 }
@@ -695,7 +708,6 @@ small {
 }
 
 
-
 /* CONTACT */
 #contact {
     background-image: 
@@ -739,35 +751,13 @@ small {
 
 
 /*--- KEYFRAMES ANIMATION ---*/
-@keyframes moveInLeft {
+@keyframes fadeIn {
     0% {
         opacity: 0;
-        transform: translateX(-12rem);
-    }
-
-    80% {
-        transform: translateX(2rem);
     }
 
     100% {
         opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(12rem);
-    }
-
-    80% {
-        transform: translateX(-1rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
     }
 }
 
@@ -783,7 +773,7 @@ small {
     }
 }
 
-@keyframes moveInUp {
+@keyframes moveInTop {
     0% {
         opacity: 0;
         transform: translateY(-3rem);
@@ -795,34 +785,105 @@ small {
     }
 }
 
-@keyframes fadeIn {
+@keyframes moveInLeft {
     0% {
         opacity: 0;
+        transform: translateX(-15rem);
     }
 
     100% {
         opacity: 1;
+        transform: translateX(0);
     }
 }
 
-/* @keyframes color-change-red {
-
+@keyframes moveInRight {
     0% {
-        fill: var(--color-brown);
-    }
-
-    50% {
-        fill: var(--color-red);
+        opacity: 0;
+        transform: translateX(15rem);
     }
 
     100% {
-        fill: var(--color-red-light);
+        opacity: 1;
+        transform: translateX(0);
     }
-} */
+}
+
+@keyframes delayIn {
+    0% {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+}
+
+/* --- ANIMATION WITH KEYFRAMES --- */
+.fade-in__item,
+.bottom-in__item,
+.top-in__item,
+.left-in__item,
+.right-in__item {
+    animation-fill-mode: backwards;
+}
+ 
+.fade-in {
+    animation: .8s ease-in fadeIn;
+}
+
+.bottom-in {
+    animation: .6s ease-in moveInBottom;
+}
+
+.top-in {
+    animation: .6s ease-in moveInTop;
+}
+
+.left-in {
+    animation: .8s ease-in-out moveInLeft;
+}
+
+.right-in {
+    animation: .8s ease-in-out moveInRight;
+}
+
+.delay-in {
+    animation: .6s ease-in-out delayIn;
+    animation-fill-mode: forwards;
+}
+
+.delay-in--2 {
+    animation-delay: 200ms;
+}
+
+.delay-in--3 {
+    animation-delay: 400ms;
+}
+
+.delay-in--4 {
+    animation-delay: 600ms;
+}
+
+.delay-in--5 {
+    animation-delay: 800ms;
+}
+
+.delay-in--6 {
+    animation-delay: 1000ms;
+}
+
+.delay-in--7 {
+    animation-delay: 1200ms;
+}
 
 
 
-/*--- MEDIA QUERIES---*/
+/*----- MEDIA QUERIES-----*/
 @media all and (max-width: 70em) {
     .img__studio-box {
         left: 23rem;

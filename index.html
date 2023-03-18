@@ -61,33 +61,34 @@
         </nav>
     </header>
 
-    <div id="home" class="home">
+    <div id="home" class="page">
         <div class="profile">
             <div class="profile__img-box flex-box--left">
                 <picture>
                     <source srcset="img/profile_desk.jpg" media="(max-width: 60em)">
                     <source srcset="img/profile_mobile2.jpg" media="(max-width: 31.25em)">
-                    <img src="img/profile_desk2.jpg" alt="Miki Akuta" class="profile__img">
+                    <img src="img/profile_desk2.jpg" alt="Miki Akuta" class="profile__img fade-in__item">
                 </picture>
             </div>
             <div class="flex-box--right">
-                <div class="profile__text">
+                <div class="profile__text top-in__item">
                     <p class="profile__portfolio">Portfilio</p>
                     <h1 class="profile__heading">
                         Miki Akuta
                     </h1>
                     <h3 class="profile__developer text-italic">Web Developer</h3>
                 </div>
-                <a href="https://github.com/Mikkobelly" target="_blank" class="profile__link button-primary">Checkout
+                <a href="https://github.com/Mikkobelly" target="_blank"
+                    class="profile__link button-primary bottom-in__item">Checkout
                     some of my code</a>
             </div>
         </div>
     </div>
 
-    <div id="about" class="about">
-        <h2 class="about__heading">About</h2>
+    <div id="about" class="page">
+        <h2 class="about__heading left-in__item">About</h2>
         <div class="about__flex-box">
-            <div class="about__flex-box--left">
+            <div class="about__flex-box--left bottom-in__item">
                 <p class="about__text">
                     I am an <span class="text-italic">Adventurous</span> and <span class="text-italic">Creative</span>
                     web developer from Japan. I was a professional ballet dancer for 8 years during which I enjoyed
@@ -101,10 +102,10 @@
                 </a>
             </div>
             <div class="about__imgs">
-                <div class="about__img-box img__swan-box">
+                <div class="about__img-box img__swan-box fade-in__item">
                     <img src="img/dance_swan.jpg" alt="Miki dancing photo 1" class="about__img img__swan">
                 </div>
-                <div class="about__img-box img__studio-box">
+                <div class="about__img-box img__studio-box fade-in__item">
                     <img src="img/dance_studio.jpg" alt="Miki dancing photo 2" class="about__img img__studio">
                 </div>
             </div>
@@ -114,37 +115,37 @@
                 <div class="frontend-skills">
                     <h3 class="skill__title">Frontend</h3>
                     <ul class="skill__list">
-                        <li>HTML</li>
-                        <li>CSS3</li>
-                        <li>JavaScript</li>
-                        <li>React.js</li>
-                        <li>jQuery</li>
-                        <li>Bootstrap</li>
-                        <li>Restful API</li>
+                        <li class="delay-in__item delay-in--1">HTML</li>
+                        <li class="delay-in__item delay-in--2">CSS3</li>
+                        <li class="delay-in__item delay-in--3">Bootstrap</li>
+                        <li class="delay-in__item delay-in--4">JavaScript</li>
+                        <li class="delay-in__item delay-in--5">jQuery</li>
+                        <li class="delay-in__item delay-in--6">React</li>
+                        <li class="delay-in__item delay-in--7">Restful API</li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="skill__title">Backend</h3>
                     <ul class="skill__list">
-                        <li>Node.js</li>
-                        <li>Express</li>
-                        <li>MongoDB</li>
-                        <li>Mongoose</li>
-                        <li>EJS</li>
-                        <li>Github / Version Control</li>
-                        <li>Authentication</li>
+                        <li class="delay-in__item delay-in--1">Node.js</li>
+                        <li class="delay-in__item delay-in--2">Express</li>
+                        <li class="delay-in__item delay-in--3">MongoDB</li>
+                        <li class="delay-in__item delay-in--4">Mongoose</li>
+                        <!-- <li class="delay-in">EJS</li> -->
+                        <li class="delay-in__item delay-in--5">Github / Version Control</li>
+                        <li class="delay-in__item delay-in--6">Authentication</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="work" class="work">
-        <h2 class="work__heading">Work</h2>
+    <div id="work" class="page">
+        <h2 class="work__heading right-in__item">Work</h2>
         <div class="projects-grid">
 
             <!-- myFlix -->
-            <div class="grid__item card--1">
+            <div class="grid__item card--1 top-in__item">
                 <h3 class="project__title">myFlix</h3>
                 <div class="project__image-box" data-bs-toggle="modal" data-bs-target="#myFlixModal">
                     <picture>
@@ -245,7 +246,7 @@
             </div>
 
             <!-- myFlix Angular-->
-            <div class="grid__item card--2">
+            <div class="grid__item card--2 top-in__item">
                 <h3 class="project__title">myFlix-Angular</h3>
                 <div class="project__image-box" data-bs-toggle="modal" data-bs-target="#myFlixAngularModal">
                     <picture>
@@ -322,7 +323,7 @@
             </div>
 
             <!-- Meet App -->
-            <div class="grid__item card--3">
+            <div class="grid__item card--3 top-in__item">
                 <h3 class="project__title">Meet App</h3>
                 <div class="project__image-box" data-bs-toggle="modal" data-bs-target="#meetModal">
                     <picture>
@@ -401,7 +402,7 @@
             </div>
 
             <!-- Chat App -->
-            <div class="grid__item card--4">
+            <div class="grid__item card--4 top-in__item">
                 <h3 class="project__title">Chat App</h3>
                 <div class="project__image-box" data-bs-toggle="modal" data-bs-target="#chatAppModal">
                     <picture>
@@ -479,7 +480,7 @@
 
 
             <!-- Pokemon List -->
-            <div class="grid__item card--5">
+            <div class="grid__item card--5 top-in__item">
                 <h3 class="project__title">Pokemon List App</h3>
                 <div class="project__image-box" data-bs-toggle="modal" data-bs-target="#pokemonListModal">
                     <picture>
@@ -553,7 +554,7 @@
             </div>
 
             <!-- YelpCamp -->
-            <div class="grid__item card--6">
+            <div class="grid__item card--6 top-in__item">
                 <h3 class="project__title">Yelp Camp</h3>
                 <div class="project__image-box" data-bs-toggle="modal" data-bs-target="#yelpCampModal">
                     <picture>
@@ -700,16 +701,16 @@
         </div>
     </div>
 
-    <div id="contact" class="contact">
-        <h2 class="contact__heading">Contact</h2>
+    <div id="contact" class="page">
+        <h2 class="contact__heading left-in__item">Contact</h2>
         <div class="contact__flex-box">
-            <div class="contact__img-box">
+            <div class="contact__img-box fade-in__item">
                 <picture>
                     <source srcset="img/contact-img_mobile.jpg" media="(max-width: 46.87em)">
                     <img src="img/contact-img_desk.jpg" class="contact__img" alt="Miki's Kimono shot">
                 </picture>
             </div>
-            <section class="info-section">
+            <section class="info-section bottom-in__item">
                 <p>Birmingham</p>
                 <p>United Kingdom</p>
                 <p>Email: <a href="mailto:mikiakuta0529@gmail.com" class="link">mikiakuta0529@gmail.com</a></p>
@@ -717,7 +718,7 @@
         </div>
 
         <footer class="page-footer page-footer--home">
-            <p class="footer__text">Find me on</p>
+            <p>Find me on</p>
 
             <div class="footer__media-box">
                 <a href="https://github.com/Mikkobelly" target="_blank" class="media-link">
