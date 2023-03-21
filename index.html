@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miki Akuta Portfilio Home</title>
-    <meta name="description" content="Welcome to Miki Akuta's Portfolio Site.">
+    <title>Miki Akuta Portfilio</title>
+    <meta name="description"
+        content="Welcome to Miki Akuta's Portfolio Site. You can see information about Miki, her recent work and her contact.">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/MA-apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/MA-favicon-32x32.png">
@@ -28,7 +29,6 @@
 </head>
 
 <body>
-    <!-- <div class="flex-container"> -->
     <header class="page-header">
         <img src="img/mikkobelly-design-logo.jpg" class="page-header__item navigation-logo"
             alt="navigation logo mikkobelly-design">
@@ -147,7 +147,7 @@
 
             <!-- myFlix -->
             <div class="grid__item card--1 top-in__item">
-                <h3 class="project__title">myFlix</h3>
+                <h3 class="project__title">myFlix-React</h3>
                 <div class="project__image-box" data-bs-toggle="modal" data-bs-target="#myFlixModal">
                     <picture>
                         <source srcset="img/myflix-mobile.png" media="(max-width: 31.25em)">
@@ -157,7 +157,7 @@
                 <p class="project__description">
                     myFlix provides users access to information about different
                     movies, directors, and genres. Users will be able to sign up, update their
-                    personal information, and create a list of their favorite movies.
+                    personal information and create a list of their favorite movies.
                 </p>
                 <button type="button" class="project__btn" data-bs-toggle="modal" data-bs-target="#myFlixModal">
                     See details
@@ -180,15 +180,17 @@
                         </div>
                         <div class="modal-body">
                             <p>
-                                myFlix is a SPA and it's built using full-stack JavaScript technologies MERN.
-                                For the backend, I implemented my own REST API alongside basic HTTP authentication
-                                for the initial login requests and JWT authentication for future requests to myFlix
-                                API using Passport.
+                                myFlix is a single-page application and it's built using full-stack JavaScript
+                                technologies MERN.
+                                For the backend, I implemented my own REST API (myFlix API) alongside basic HTTP
+                                authentication
+                                for the initial login requests and JSON Web Token (JWT) authentication for future
+                                requests using Passport.
                                 For the frontend, I incorporated client-side routing using React Router.
                             </p>
                             <hr>
                             <h4 class="modal__techs">Technologies: </h4>
-                            <p>Node.js, Express, MongoDB, React, React Bootstrap etc.</p>
+                            <p>Node.js, Express, MongoDB, React, React Router, React Bootstrap, Passport etc.</p>
                             <div class="modal__links">
                                 <div>
                                     <a href="https://myflix-by-mikkobelly.netlify.app/" class="project__btn modal__btn"
@@ -218,7 +220,7 @@
                                         </a>
                                     </div>
                                     <div>
-                                        <small>myFlix API:</small>
+                                        <small>server-side:</small>
                                         <a href="https://github.com/Mikkobelly/myFlix" target="_blank"
                                             class="media-link">
                                             <!DOCTYPE svg
@@ -258,7 +260,7 @@
                 <p class="project__description">
                     myFlix-Angular app is a single-page and responsive application build with popular JS framework
                     Angular,
-                    based on the existing server-side code myFlix API (REST API and database)
+                    based on the existing server-side code myFlix API (REST API and database).
                 </p>
                 <button type="button" class="project__btn" data-bs-toggle="modal" data-bs-target="#myFlixAngularModal">
                     See details
@@ -290,7 +292,7 @@
                             </p>
                             <hr>
                             <h4 class="modal__techs">Technologies: </h4>
-                            <p>MERN (for backend), Angular, TypeScript, Angular Material, TypeDoc</p>
+                            <p>MongoDB, Node.js, Express, Angular, TypeScript, Angular Material, TypeDoc</p>
                             <div class="modal__links">
                                 <div>
                                     <a href="https://mikkobelly.github.io/myFlix-Angular-client/"
@@ -358,18 +360,18 @@
                         </div>
                         <div class="modal-body">
                             <p>
-                                Meet App is a progressive web application built with React using test-driven
+                                Meet App is a progressive web application (PWA) built with React using test-driven
                                 development (TDD) technique.
                                 The app works offline and it can be installed on both mobile devices and computers.
-                                Serverless functions are used(AWS Lambda) for the authorization server which
-                                generates authorization token(OAuth2 token) needed in order to access the Google
+                                Serverless functions are used (AWS Lambda) for the authorization server which
+                                generates authorization token (OAuth2 token) needed in order to access the Google
                                 Calendar API and
                                 get events data. Scatter chart and pie chart are implemented to visualize data using
                                 the recharts library.
                             </p>
                             <hr>
                             <h4 class="modal__techs">Technologies: </h4>
-                            <p>React, Recharts, AWS Lamda, serverless, Jest, cucmber-jest, Puppeteer, Atatus etc.
+                            <p>React, Recharts, AWS Lamda, Serverless, Jest, Cucmber-jest, Puppeteer, Atatus etc.
                             </p>
                             <div class="modal__links">
                                 <div>
@@ -436,7 +438,7 @@
                         </div>
                         <div class="modal-body">
                             <p>
-                                Chat App is a cross-platform native and real-time application developed using Expo and
+                                Chat App is a cross-platform, native and real-time application developed using Expo and
                                 written in React Native. Library Gifted Chat is used to create chat interface with
                                 customized message bubbles. Users can choose a theme color on the start page before
                                 joining the chat, send images as well as their current location in a map view. Google
@@ -449,10 +451,6 @@
                                 React Native, Gifted Chat, Expo, Google Firebase
                             </p>
                             <div class="modal__links">
-                                <!-- <div>
-                                    <a href="" class="project__btn modal__btn"
-                                        target="_blank">Go to site</a>
-                                </div> -->
                                 <div>
                                     <a href="https://github.com/Mikkobelly/ChatApp" target="_blank" class="media-link">
                                         <!DOCTYPE svg
@@ -490,8 +488,8 @@
                     </picture>
                 </div>
                 <p class="project__description">
-                    Pokemon List App displays the list of pokemon names and its details(image, height, types
-                    etc.) upon selection!
+                    Pokemon List App displays the list of pokemon names and its details (image, height, types
+                    and abilities) upon selection!
                 </p>
                 <button type="button" class="project__btn" data-bs-toggle="modal" data-bs-target="#pokemonListModal">
                     See details
@@ -514,11 +512,9 @@
                         </div>
                         <div class="modal-body">
                             <p>
-                                This application calls pokeAPI and displays pokemon names in a list and upon
-                                selection will display
-                                the pokemon's details in a modal. Additionally user can search specific pokemons by
-                                name and
-                                display only matched ones.
+                                This application calls pokemon API and displays pokemon names in a list and upon
+                                selection will display the pokemon's details in a modal. Additionally users can search
+                                specific pokemons by name and display only matched ones.
                             </p>
                             <hr>
                             <h4 class="modal__techs">Technologies: </h4>
@@ -565,7 +561,7 @@
                 </div>
                 <p class="project__description">
                     A full-stack application using Express, MongoDB, EJS and Passport
-                    authentication etc. Register campgrounds and leave reviews!
+                    authentication etc. Users can signup, add campgrounds to the site and leave reviews!
                 </p>
                 <button type="button" class="project__btn" data-bs-toggle="modal" data-bs-target="#yelpCampModal">
                     See details
@@ -590,12 +586,12 @@
                             <p>
                                 YelpCamp is a full-stack application which displays list of campgrounds, a map with
                                 listed data and reviews for each campgrounds.
-                                The app allows registered user to add campgrounds to the list, updates its
+                                The app allows registered users to add campgrounds to the list, updates its
                                 information and leave reviews.
                             </p>
                             <hr>
                             <h4 class="modal__techs">Technologies: </h4>
-                            <p>Node.js, Express, EJS, MongoDB, Mongoose, Passport etc.</p>
+                            <p>Node.js, Express, EJS, MongoDB, Mongoose, Passport, Cloudinary, Mapbox etc.</p>
                             <div class="modal__links">
                                 <div>
                                     <a href="https://yelpcamp2022.onrender.com/" class="project__btn modal__btn"
@@ -627,78 +623,6 @@
                 </div>
             </div>
 
-            <!-- To Do List -->
-            <!-- <div class="grid__item">
-                <h3 class="project__title">To Do List</h3>
-                <div class="project__image-box" data-bs-toggle="modal" data-bs-target="#toDoListModal">
-                    <picture>
-                        <source srcset="img/todo-list-mobile.png" media="(max-width: 31.25em)">
-                        <img src="img/todo-list-desk.png" class="project__image" alt="todo list app image">
-                    </picture>
-                </div>
-                <p class="project__description">
-                    A full-stack application using Express, MongoDB, Mongoose and EJS
-                    etc. You can create your own custom list by adding the list name in URL!
-                </p>
-                <button type="button" class="project__btn" data-bs-toggle="modal" data-bs-target="#toDoListModal">
-                    See details
-                </button>
-            </div> -->
-
-            <!-- Modal for To Do List-->
-            <!-- <div class="modal fade" id="toDoListModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3 class="modal__title">To Do List</h3>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal__image-box">
-                            <picture>
-                                <source srcset="img/todo-list-mobile.png" media="(max-width: 31.25em)">
-                                <img src="img/todo-list-desk.png" class="modal__image" alt="To Do List app image">
-                            </picture>
-                        </div>
-                        <div class="modal-body">
-                            <p>
-                                To Do List is a full-stack application which allows users to manage to-dos.
-                                Users can add/delete items and it's easy to use. Additionally users can create
-                                custom list by typing the list name
-                                in the URL after domain name followed by /.
-                            </p>
-                            <hr>
-                            <h4 class="modal__techs">Technologies: </h4>
-                            <p>Node.js, Express, EJS, MongoDB, Mongoose etc.</p>
-                            <div class="modal__links">
-                                <div>
-                                    <a href="https://todolistnode.onrender.com/" class="project__btn modal__btn"
-                                        target="_blank">Go to site</a>
-                                </div>
-                                <div>
-                                    <a href="https://github.com/Mikkobelly/ToDoList" target="_blank" class="media-link">
-                                        <!DOCTYPE svg
-                                            PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
-                                        <svg style="enable-background:new 0 0 512 512;" version="1.1"
-                                            viewBox="0 0 512 512" xml:space="preserve"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink" class="media">
-                                            <g>
-                                                <path class="st0" d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1
-                                                       c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   
-                                                       c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   
-                                                       c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   
-                                                       c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   
-                                                       c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   
-                                                       C480,134.8,379.7,32,256,32z" />
-                                            </g>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 
@@ -776,7 +700,6 @@
             <small class="footer__text">&copy; Miki Akuta 2023</small>
         </footer>
     </div>
-    <!-- </div> -->
 
     <!-- <script src="js/tota11y.min.js"></script> -->
     <!-- Bootstrap JavaScript Bundle with Popper -->
