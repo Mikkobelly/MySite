@@ -16,17 +16,13 @@
     })
 })();
 
-// 
 
 // Intersection observer
 (function (observer) {
     // Elements fade in
     const fadeInObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            console.log(entry);
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-            }
+            entry.isIntersecting && entry.target.classList.add('fade-in');
         })
     })
 
@@ -36,10 +32,7 @@
     // Elements slide in from the bottom
     const bottomInObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            console.log(entry);
-            if (entry.isIntersecting) {
-                entry.target.classList.add('bottom-in');
-            }
+            entry.isIntersecting && entry.target.classList.add('bottom-in');
         })
     })
 
@@ -49,10 +42,7 @@
     // Elements slide in from the top
     const topInObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            console.log(entry);
-            if (entry.isIntersecting) {
-                entry.target.classList.add('top-in');
-            }
+            entry.isIntersecting && entry.target.classList.add('top-in');
         })
     })
 
@@ -62,12 +52,7 @@
     // Elements slide in from the left
     const leftInObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            console.log(entry);
-            if (entry.isIntersecting) {
-                entry.target.classList.add('left-in');
-            } else {
-                entry.target.classList.remove('left-in');
-            }
+            entry.isIntersecting && entry.target.classList.add('left-in');
         })
     })
 
@@ -77,12 +62,7 @@
     // Elements slide in from the right
     const rightInObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            console.log(entry);
-            if (entry.isIntersecting) {
-                entry.target.classList.add('right-in');
-            } else {
-                entry.target.classList.remove('right-in');
-            }
+            entry.isIntersecting && entry.target.classList.add('right-in');
         })
     })
 
@@ -92,13 +72,33 @@
     // Elements appearing with delay
     const delayInObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            console.log(entry);
-            if (entry.isIntersecting) {
-                entry.target.classList.add('delay-in');
-            }
+            entry.isIntersecting && entry.target.classList.add('delay-in');
         })
     })
 
     const delayInItems = document.querySelectorAll('.delay-in__item');
     delayInItems.forEach(item => delayInObserver.observe(item));
+})();
+
+// Navigation animation
+(function (Navigation) {
+    let section = document.querySelectorAll('.section');
+    let menu = document.querySelectorAll('.navigation-list__item');
+
+    window.onscroll = () => {
+        section.forEach(i => {
+            let top = window.scrollY;
+            let offset = window.innerWidth < 1170 ? i.offsetTop - 400 : i.offsetTop - 250;
+            let height = i.offsetHeight;
+            let id = i.getAttribute('id');
+            if (top >= offset && top < offset + height) {
+                menu.forEach(link => {
+                    link.classList.remove('active-link');
+                    if (window.innerWidth > 600) {
+                        document.querySelector('.navigation-list__item[href*=' + id + ']').classList.add('active-link');
+                    }
+                });
+            }
+        });
+    };
 })();
