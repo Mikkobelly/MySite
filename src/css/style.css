@@ -315,15 +315,12 @@ a:visited {
     box-shadow: var(--box-shadow-big);
 }
 
-.media-link:hover .media {
-    fill: var(--color-red);
-}
-
-._media-link:active {
+.media-link:active {
     transform: translateY(-3px);
     box-shadow: var(--box-shadow-small);
 }
 
+.media-link:hover .media,
 .media-link:active .media {
     fill: var(--color-red);
 }
@@ -637,18 +634,17 @@ a:visited {
 .project__btn:hover,
 .project__btn:active {
     color: var(--color-white);
+    background-color: var(--color-mustartd-light);
     border-bottom: 2px solid transparent;
 }
 
 .project__btn:hover {
-    background-color: var(--color-mustartd-light);
     opacity: .65;
     transform: translateY(-5px);
     box-shadow: var(--box-shadow-big);
 }
 
 .project__btn:active {
-    background-color: var(--color-mustartd-light);
     opacity: 1;
     transform: translateY(-3px);
     box-shadow: var(--box-shadow-small);
