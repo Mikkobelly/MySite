@@ -55,7 +55,7 @@ thead {
 }
 
 h1.case-study__title {
-    font-size: 3.6rem;
+    font-size: 3.8rem;
     margin-bottom: 10vw;
     text-align: center;
 }
@@ -282,6 +282,7 @@ img {
     transform: translateY(-3px);
     box-shadow: var(--box-shadow-small);
 }
+
 
 
 @media all and (max-width: 60.625em) {

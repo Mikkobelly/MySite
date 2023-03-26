@@ -650,6 +650,15 @@ a:visited {
     box-shadow: var(--box-shadow-small);
 }
 
+.case-study__btn {
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.case-study__btn:hover {
+    cursor: pointer;
+}
+
 
 /* MODAL */
 .modal-content {

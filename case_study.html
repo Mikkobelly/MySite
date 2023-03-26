@@ -35,9 +35,9 @@
             <section id="overview">
                 <h2 class="overview__heading">Overview</h2>
                 <p class="overview__text">
-                    myFlix will provide users with access to information about different
-                    movies, directors, and genres. Users will be able to sign up, update their
-                    personal information, and create a list of their favorite movies.
+                    myFlix provides users access to information about different
+                    movies, directors, and genres. Users can sign up, update their
+                    personal information and create a list of their favorite movies.
                 </p>
             </section>
 
@@ -45,8 +45,7 @@
                 <h2 class="purpose__heading">Purpose</h2>
                 <p class="purpose__text">
                     myFlix is a personal project I built as a part of my web development course at Career Foundry to
-                    demostrate my
-                    skills to create a full-stack application from scratch.
+                    demostrate my skills to create a full-stack application from scratch.
                 </p>
             </section>
 
@@ -54,8 +53,7 @@
                 <h2 class="objective__heading">Objective</h2>
                 <p class="objective__text">
                     The aim of the project is to learn fundamentals of server-side development and create the
-                    user-interface
-                    (client-side) based on it
+                    user-interface (client-side) based on it
                     as well as building a showcase to be added in my professional portfolio.
                 </p>
             </section>
@@ -107,12 +105,12 @@
                 <div class="server__img-inner-box">
                     <a href="img/postman_movies.png" target="_blank">
                         <img src="img/postman_movies.png"
-                            alt="screenshot of postman sending GET request to get movies data"
+                            alt="screenshot of postman sending a request to get movies data"
                             class="server__img--movies">
                     </a>
                     <a href="img/postman_update.png" target="_blank">
                         <img src="img/postman_update.png"
-                            alt="screenshot of postman sending PUT request to update user details"
+                            alt="screenshot of postman sending a request to update user details"
                             class="server__img--update">
                     </a>
                 </div>
@@ -121,24 +119,18 @@
             <div class="server__content">
                 <h3 class="server__heading">Server-Side</h3>
                 <p class="server__text">
-                    I first defined the RESTful API endpoints using Node.js with its one of the most popular framework,
-                    Express.
+                    I first defined the RESTful API endpoints using Node.js with its popular framework, Express.
                     The API can be accessed and perform CRUD operations (Create, Read, Update, Destroy) via commonly
-                    used
-                    HTTP
-                    requests GET, POST, PUT and DELETE. To test the API, I used Postman.
+                    used HTTP requests like GET and POST. To test the API, I used Postman.
                     I then created a non-relational database, MongoDB using Mongoose to model the buisiness logic for
                     interacting with the database.
                     In addition, CORS(Cross-Origin Resource Sharing) policy is used for data security and validation to
-                    keep
-                    the
-                    application safe by restricting access to only the allowed domains.
-                    For user authentication and authorazation, I implemented basic HTTP authentication for the initial
-                    login
-                    request to myFlix API and JSON Web Token (JWT) authentication for the subsequent requests. Using
-                    passport,
-                    an authentication middleware for Node.js and Express, simplified the process significantly.
-                    I hosted the server-side application on Heroku.
+                    keep the application safe by restricting access to only the allowed domains.
+                    For user authentication and authorization, I implemented basic HTTP authentication for the initial
+                    login request and JSON Web Token (JWT) authentication for the subsequent ones.
+                    Using passport, an authentication middleware for Node.js and Express, simplified the process
+                    significantly.
+                    Lastly I hosted the server-side application on Heroku.
                 </p>
                 <div class="sever__illustration">
                     <a href="img/server-steps.svg" target="_blank">
@@ -153,12 +145,13 @@
             <h3 class="client__heading">Client-Side</h3>
             <p class="client__text">
                 After completing the server-side development, I started building a client-side of the full-stack
-                application. I used React, JavaScript library for creating a single-page application (SPA) together with
+                application. I used React, popular JavaScript library for creating a single-page application (SPA)
+                together with
                 React Bootstrap which helps to maintain consistent styling of the user interface and apply
-                responsiveness.
+                responsive design.
                 I incorporated client-side routing using React Router so that the application's state (what's displayed
-                on
-                the browser) can be stored and that allows users to share the link to the correct content with others.
+                on the browser) can be stored and that allows users to share the link to the correct content with
+                others.
             </p>
             <div class="screenshots__box">
                 <div class="screenshot--1">
@@ -181,13 +174,11 @@
         <p class="challenges__text">
             The most challenging part was to get grasp of React usage. It took me a while to understand
             how the applicaiton lifecyle (React component cycle) looks like from opening the app, performing operations
-            to
-            closing the app and how user interface components can interact with it upon user actions. After taking my
-            time
-            reading the resources and practicing repetitively, I started to enjoy working with React and managed to
-            successfully implement the functionality for the browser to display the content dynamically according to
-            what
-            operations users perform.
+            to closing the app and how the user interface components can interact with it upon user actions.
+            After taking my time reading the resources and practicing repetitively,
+            I started to enjoy working with React and managed to successfully implement the functionality for the
+            browser to display the content dynamically according to
+            what operations users perform.
         </p>
     </section>
 
@@ -195,9 +186,9 @@
         <h2 class="future__heading">Future Steps</h2>
         <p class="future__text">
             I am happy with how myFlix application works now but to continue improving the user experience, I would like
-            to
-            expand the application by adding some features like allowing users to sort their favourite movies based on
-            different criteria, create 'to watch' list in addition to 'favourits' list and more.
+            to expand the application by adding some features like
+            allowing users to sort their favourite movies based on
+            different criteria, create 'to watch' list in addition to 'favourites' list and more.
         </p>
     </section>
 
