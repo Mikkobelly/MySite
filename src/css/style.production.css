@@ -74,7 +74,7 @@ ul {
 /*--------- LAYOUT ---------*/
 #home,
 #about,
-#work,
+#projects,
 #contact {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -92,7 +92,7 @@ ul {
     padding: 8vw 10vw;
 }
 
-#work {
+#projects {
     padding: 8vw 0;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -352,17 +352,14 @@ a:visited {
             box-shadow: var(--box-shadow-big);
 }
 
-.media-link:hover .media {
-    fill: var(--color-red);
-}
-
-._media-link:active {
+.media-link:active {
     -webkit-transform: translateY(-3px);
             transform: translateY(-3px);
     -webkit-box-shadow: var(--box-shadow-small);
             box-shadow: var(--box-shadow-small);
 }
 
+.media-link:hover .media,
 .media-link:active .media {
     fill: var(--color-red);
 }
@@ -426,6 +423,7 @@ a:visited {
 }
 
 .profile__link {
+    font-size: 1.8rem;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
@@ -603,7 +601,7 @@ a:visited {
 
 
 /* WORK */
-.work__heading {
+.projects__heading {
     margin-right: auto;
     margin-left: 10vw;
     margin-bottom: 3.5rem;
@@ -725,11 +723,6 @@ a:visited {
             box-shadow: var(--box-shadow-red);
 }
 
-.project__description,
-.project__btn {
-    font-size: 1.25rem;
-}
-
 .project__btn {
     -ms-flex-item-align: end;
         -ms-grid-row-align: end;
@@ -748,11 +741,11 @@ a:visited {
 .project__btn:hover,
 .project__btn:active {
     color: var(--color-white);
+    background-color: var(--color-mustartd-light);
     border-bottom: 2px solid transparent;
 }
 
 .project__btn:hover {
-    background-color: var(--color-mustartd-light);
     opacity: .65;
     -webkit-transform: translateY(-5px);
             transform: translateY(-5px);
@@ -761,12 +754,20 @@ a:visited {
 }
 
 .project__btn:active {
-    background-color: var(--color-mustartd-light);
     opacity: 1;
     -webkit-transform: translateY(-3px);
             transform: translateY(-3px);
     -webkit-box-shadow: var(--box-shadow-small);
             box-shadow: var(--box-shadow-small);
+}
+
+.case-study__btn {
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.case-study__btn:hover {
+    cursor: pointer;
 }
 
 
@@ -816,6 +817,7 @@ a:visited {
 
 .modal__btn:link,
 .modal__btn:visited {
+    font-size: 1.4rem;
     color: var(--color-red);
 }
 
@@ -827,10 +829,6 @@ a:visited {
 
 hr {
     margin: 2.75rem 0;
-}
-
-small {
-    font-size: 1rem;
 }
 
 
@@ -1143,6 +1141,11 @@ small {
             animation-delay: 1200ms;
 }
 
+.delay-in--8 {
+    -webkit-animation-delay: 1400ms;
+            animation-delay: 1400ms;
+}
+
 
 
 /*----- MEDIA QUERIES-----*/
@@ -1212,7 +1215,7 @@ small {
         margin-right: 3rem;
     }
 
-    .work__heading {
+    .projects__heading {
         margin: 0 0 3.5rem;
     }
 
