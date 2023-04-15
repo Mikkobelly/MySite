@@ -544,7 +544,7 @@ a:visited {
 
 /* ---- IMAGES ANIMATION ---- */
 .img__swan-box::before {
-    content: "Dacing Swan Lake";
+    content: "Dancing Swan Lake";
     display: block;
     width: -webkit-fit-content;
     width: -moz-fit-content;
