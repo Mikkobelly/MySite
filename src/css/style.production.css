@@ -1146,6 +1146,11 @@ hr {
             animation-delay: 1400ms;
 }
 
+.delay-in--9 {
+    -webkit-animation-delay: 1600ms;
+            animation-delay: 1600ms;
+}
+
 
 
 /*----- MEDIA QUERIES-----*/

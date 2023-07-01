@@ -1,5 +1,5 @@
 // Collapsible navigation
-(function (navigation) {
+(function navCollapse() {
     const menuIcon = document.querySelector('.dropdown__menu');
     const closeIcon = document.querySelector('.dropdown__close');
     const menuIconBox = document.querySelector('.dropdown__menu-box');
@@ -18,87 +18,58 @@
 
 
 // Intersection observer
-(function (observer) {
-    // Elements fade in
-    const fadeInObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            entry.isIntersecting && entry.target.classList.add('fade-in');
-        })
-    })
+(function observer() {
+    const addObserver = (targetEls, className) => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                entry.isIntersecting && entry.target.classList.add(className);
+            })
+        });
+        targetEls.forEach(item => observer.observe(item));
+    }
 
+    // Elements fade in
     const fadeInItems = document.querySelectorAll('.fade-in__item');
-    fadeInItems.forEach(item => fadeInObserver.observe(item));
+    addObserver(fadeInItems, 'fade-in');
 
     // Elements slide in from the bottom
-    const bottomInObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            entry.isIntersecting && entry.target.classList.add('bottom-in');
-        })
-    })
-
     const bottomInItems = document.querySelectorAll('.bottom-in__item');
-    bottomInItems.forEach(item => bottomInObserver.observe(item));
+    addObserver(bottomInItems, 'bottom-in');
 
     // Elements slide in from the top
-    const topInObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            entry.isIntersecting && entry.target.classList.add('top-in');
-        })
-    })
-
     const topInItems = document.querySelectorAll('.top-in__item');
-    topInItems.forEach(item => topInObserver.observe(item));
+    addObserver(topInItems, 'top-in');
 
     // Elements slide in from the left
-    const leftInObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            entry.isIntersecting && entry.target.classList.add('left-in');
-        })
-    })
-
     const leftInItems = document.querySelectorAll('.left-in__item');
-    leftInItems.forEach(item => leftInObserver.observe(item));
+    addObserver(leftInItems, 'left-in');
 
     // Elements slide in from the right
-    const rightInObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            entry.isIntersecting && entry.target.classList.add('right-in');
-        })
-    })
-
     const rightInItems = document.querySelectorAll('.right-in__item');
-    rightInItems.forEach(item => rightInObserver.observe(item));
+    addObserver(rightInItems, 'right-in');
 
     // Elements appearing with delay
-    const delayInObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            entry.isIntersecting && entry.target.classList.add('delay-in');
-        })
-    })
-
     const delayInItems = document.querySelectorAll('.delay-in__item');
-    delayInItems.forEach(item => delayInObserver.observe(item));
+    addObserver(delayInItems, 'delay-in');
 })();
 
 // Navigation animation
-(function (Navigation) {
-    let section = document.querySelectorAll('.section');
-    let menu = document.querySelectorAll('.navigation-list__item');
+(function navAnimation() {
+    let sections = document.querySelectorAll('.section');
+    let navItems = document.querySelectorAll('.navigation-list__item');
 
-    window.onscroll = () => {
-        section.forEach(i => {
-            let top = window.scrollY;
-            let offset = window.innerWidth < 1170 ? i.offsetTop - 400 : i.offsetTop - 250;
-            let height = i.offsetHeight;
-            let id = i.getAttribute('id');
-            if (top >= offset && top < offset + height) {
-                menu.forEach(link => {
-                    link.classList.remove('active-link');
-                    if (window.innerWidth > 600) {
-                        document.querySelector('.navigation-list__item[href*=' + id + ']').classList.add('active-link');
-                    }
+    let option = { threshold: 0.1 }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                navItems.forEach(item => {
+                    item.classList.remove('active-link');
+                    const targetedNavItem = document.querySelector(`.navigation-list__item[href="#${entry.target.id}"]`);
+                    targetedNavItem && targetedNavItem.classList.add('active-link');
                 });
             }
-        });
-    };
+        })
+    }, option);
+
+    sections.forEach(item => observer.observe(item));
 })();
