@@ -893,6 +893,10 @@ hr {
     animation-delay: 1400ms;
 }
 
+.delay-in--9 {
+    animation-delay: 1600ms;
+}
+
 
 
 /*----- MEDIA QUERIES-----*/
