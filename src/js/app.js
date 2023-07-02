@@ -17,8 +17,30 @@
 })();
 
 
-// Intersection observer
-(function observer() {
+// Active navigation link
+(function activeNavLink() {
+    let sections = document.querySelectorAll('.section');
+    let navItems = document.querySelectorAll('.navigation-list__item');
+
+    let option = { threshold: 0.1 }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                navItems.forEach(item => {
+                    item.classList.remove('active-link');
+                    const targetedNavItem = document.querySelector(`.navigation-list__item[href="#${entry.target.id}"]`);
+                    targetedNavItem && targetedNavItem.classList.add('active-link');
+                });
+            }
+        })
+    }, option);
+
+    sections.forEach(item => observer.observe(item));
+})();
+
+
+// Animation
+(function animation() {
     const addObserver = (targetEls, className) => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -51,25 +73,4 @@
     // Elements appearing with delay
     const delayInItems = document.querySelectorAll('.delay-in__item');
     addObserver(delayInItems, 'delay-in');
-})();
-
-// Navigation animation
-(function navAnimation() {
-    let sections = document.querySelectorAll('.section');
-    let navItems = document.querySelectorAll('.navigation-list__item');
-
-    let option = { threshold: 0.1 }
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                navItems.forEach(item => {
-                    item.classList.remove('active-link');
-                    const targetedNavItem = document.querySelector(`.navigation-list__item[href="#${entry.target.id}"]`);
-                    targetedNavItem && targetedNavItem.classList.add('active-link');
-                });
-            }
-        })
-    }, option);
-
-    sections.forEach(item => observer.observe(item));
 })();
